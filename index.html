@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Simon Dice</title>
+    <title>Juego de Memoria con JS</title>
     <style>
       body {
         margin: 0;
@@ -101,6 +101,8 @@
       const verde = document.getElementById('verde')
       const btnEmpezar = document.getElementById('btnEmpezar')
       const ULTIMO_NIVEL = 5
+      swal("Juego de Memoria","Instrucciones: Simplemente debes de pinchar con tu raton \n"
+          +"la secuencia de colores que se ilumina.")
       class Juego {
         constructor() {
           this.inicializar()
@@ -210,11 +212,11 @@
             }
         }
         gano(){
-          swal('Simon dice',"Felicidadez ganaste!",'success')
+          swal('Felicidades!',"Completaste todos los niveles.",'success')
           .then(()=>this.inicializar())
         }
         perdio(){
-          swal("Simon dice", 'Que lastima haz perdido, intentalo nuevamente', 'error')
+          swal("Oh que lastima!", 'haz perdido, intentalo nuevamente', 'error')
           .then(()=>{
             this.eliminarEventosClick()
             this.inicializar()
